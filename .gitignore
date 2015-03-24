@@ -11,9 +11,12 @@
 /db/*.sqlite3
 /db/*.sqlite3-journal
 
+.DS_Store
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp
+/public/spree/*
 /config/database.yml
 /solr/development/data/*
 /solr/default/data/*

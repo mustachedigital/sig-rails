@@ -8,3 +8,8 @@
  *= require_self
  *= require_tree .
 */
+
+
+#spree-header #logo img {
+	width: 100px;
+}
