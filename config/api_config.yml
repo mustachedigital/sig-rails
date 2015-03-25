@@ -1,0 +1,9 @@
+production:
+  amazon_bucket_name: sig-prod
+  amazon_access_key: AKIAJWWMO4POBLH7QTQQ
+  amazon_access_secret: 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
+
+development:
+  amazon_bucket_name: sig-dev
+  amazon_access_key: AKIAJWWMO4POBLH7QTQQ
+  amazon_access_secret: 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
