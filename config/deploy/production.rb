@@ -1,6 +1,6 @@
 # Settings for staging server
 server '54.148.206.64',:app, :web, :db, :primary => true
-set :rails_env, 'development'
+set :rails_env, 'production'
 
 set :use_sudo, false
 set :deploy_via, :remote_cache
