@@ -24,23 +24,21 @@ production: &production
       :default_url: "/spree/products/:id/:style/:basename.:extension"
       :default_style: "product"
   :taxons:
-    :attachment:
+    :icon:
       :storage: !ruby/symbol s3
       :s3_protocol: :https
       :s3_credentials:
         <<: *default_settings
       :s3_permissions:
         :product: :public_read
-      :default_url: '/assets/missing.png'
+      :default_url: '/assets/default_taxon.png'
       :styles:
-        :mini: "48x48>"
-        :small: "100x100>"
-        :product: "240x240>"
-        :large: "600x600>"
+        :mini: "32x32>"
+        :normal: 128x128>
       :url: ":s3_domain_url"
-      :path: "/spree/products/:id/:style/:basename.:extension"
-      :default_url: "/spree/products/:id/:style/:basename.:extension"
-      :default_style: "product"
+      :path: "/spree/taxons/:id/:style/:basename.:extension"
+      :default_url: "/spree/taxons/:id/:style/:basename.:extension"
+      :default_style: "mini"
 
 development: &development
   :images:
@@ -56,14 +54,12 @@ development: &development
       :default_url: ":rails_root/public/spree/products/:id/:style/:basename.:extension"
       :default_style: "product"
   :taxons:
-    :attachment:
-      :default_url: '/assets/missing.png'
+    :icon:
+      :default_url: '/assets/default_taxon.png'
       :styles:
-        :mini: "48x48>"
-        :small: "100x100>"
-        :product: "240x240>"
-        :large: "600x600>"
-      :url: "/spree/products/:id/:style/:basename.:extension"
-      :path: ":rails_root/public/spree/products/:id/:style/:basename.:extension"
-      :default_url: ":rails_root/public/spree/products/:id/:style/:basename.:extension"
-      :default_style: "product"
+        :mini: "32x32>"
+        :normal: 128x128>
+      :url: ":s3_domain_url"
+      :path: "/spree/taxons/:id/:style/:basename.:extension"
+      :default_url: "/spree/taxons/:id/:style/:basename.:extension"
+      :default_style: "mini"

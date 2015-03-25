@@ -1,8 +1,10 @@
 module Spree
   Taxon.class_eval do
   	
-  	has_attached_file :attachment,
-      SigRails::Configuration.paperclip_options[:taxons][:attachment]
-    validates_attachment :attachment, content_type: { content_type: /\Aimage\/.*\Z/ }
+  	has_attached_file :icon,
+      SigRails::Configuration.paperclip_options[:taxons][:icon]
+
+    validates_attachment :icon,
+      content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
   end
 end
