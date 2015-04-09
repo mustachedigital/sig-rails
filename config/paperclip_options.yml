@@ -65,5 +65,5 @@ development: &development
       :default_style: "mini"
   :bulk_uploads:
     :file:
-      :url: "/spree/bulk_uploads/:id/:basename.:extension"
+      :url: ":rails_root/public/spree/bulk_uploads/:id/:basename.:extension"
       :path: ":rails_root/public/spree/bulk_uploads/:id/:basename.:extension"
