@@ -63,3 +63,7 @@ development: &development
       :path: "/spree/taxons/:id/:style/:basename.:extension"
       :default_url: "/spree/taxons/:id/:style/:basename.:extension"
       :default_style: "mini"
+  :bulk_uploads:
+    :file:
+      :url: "/spree/bulk_uploads/:id/:basename.:extension"
+      :path: ":rails_root/public/spree/bulk_uploads/:id/:basename.:extension"

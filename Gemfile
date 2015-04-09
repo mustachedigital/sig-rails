@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+# SPREE PATH /Users/ishank/.rvm/gems/ruby-2.1.0/bundler/gems/spree-2232af34fa19
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 gem 'spree', github: 'spree/spree', branch: '3-0-stable'
@@ -11,6 +11,7 @@ gem 'mysql2'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 gem 'less-rails'
+gem 'slim-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -51,6 +52,7 @@ gem 'puma'
 #   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 #   gem 'spring'
 # end
+gem 'quiet_assets', group: :development
 group :development do
   gem 'capistrano', '2.15.5'
   gem 'capistrano-unicorn', :require => false
