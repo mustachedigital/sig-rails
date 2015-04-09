@@ -1,3 +1,4 @@
+module Spree
 module Admin
   class BulkUploadsController < Spree::Admin::BaseController
 
@@ -21,4 +22,5 @@ module Admin
     end
 
   end
+end
 end

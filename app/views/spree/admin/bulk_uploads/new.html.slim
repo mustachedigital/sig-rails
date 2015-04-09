@@ -1,0 +1,16 @@
+- content_for :page_title do 
+  | Upload Products
+= form_for [:admin, @bulk_upload] do |f|
+
+  div data-hook="admin_product_form_fields"
+    .row
+      .col-md-8
+        div
+          = f.field_container :file, class: ['form-group'] do
+            = f.label :file
+            = f.file_field :file, class: 'form-control title' 
+            = f.error_message_on :file
+
+        div
+          = f.field_container :submit, class: ['form-group'] do
+            = f.submit "Submit"
