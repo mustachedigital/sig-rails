@@ -1,5 +1,3 @@
-require 'csv' 
-require 'open-uri'
 class BulkUpload < ActiveRecord::Base
 
 	has_attached_file :file,
