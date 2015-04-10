@@ -2,6 +2,7 @@ class ProductWorker
   include Sidekiq::Worker
   def perform(attributes)
     product = Spree::Product.create(attributes)
+    p attributes
     if product.save
     	p "sabe"
     else

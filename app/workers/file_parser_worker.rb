@@ -9,13 +9,15 @@ class FileParserWorker
     	attributes = {}
     	field_names.each_with_index do |field_name, i|
         if BULK_MAPPING[field_name.strip].split(",").first == ":img"
-
+          attributes[:bulk_images] ||= []
+          row[i].split(";").each do |url|
+            attributes[:bulk_images] << url.strip
+          end
         elsif BULK_MAPPING[field_name.strip].split(",").first != ":pp"
     		  eval(%{attributes[#{BULK_MAPPING[field_name.strip]}] = "#{escape_javascript(row[i].strip)}"})
         else
-          property = Spree::Property.where(name: BULK_MAPPING[field_name.strip].split(",").last).last
           attributes[:product_properties_attributes] ||= []
-          attributes[:product_properties_attributes] << {property_id: property.id, value: row[i].strip}
+          attributes[:product_properties_attributes] << {property_name: BULK_MAPPING[field_name.strip].split(",").last, value: row[i].strip}
         end
     	end
     	ProductWorker.perform_async(attributes.merge(shipping_category_id: Spree::ShippingCategory.first.id, available_on: Date.today))

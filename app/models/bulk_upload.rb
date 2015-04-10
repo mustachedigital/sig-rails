@@ -5,7 +5,7 @@ class BulkUpload < ActiveRecord::Base
   validates_attachment :file, content_type: { content_type: ['text/csv','text/comma-separated-values','text/csv','application/csv','application/excel','application/vnd.ms-excel','application/vnd.msexcel','text/anytext','text/plain'] }
   after_create :send_to_queue
 
-  # private 
+  private 
 
   	def send_to_queue
   		FileParserWorker.perform_async(self.id)
