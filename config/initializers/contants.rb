@@ -17,9 +17,9 @@
 # }
 
 BULK_MAPPING = {
-	"Manufacturer Model Number" => ":pp,model_number",
+	"Manufacturer Model Number" => ":sku",
 	"Supplier Part Number" => ":pp,supplier_part_number",
-	"UPC Code" => ":sku",
+	"UPC Code" => ":pp,model_number",
 	"Product Name" => ":name",
 	"Wholesale Price" => ":cost_price",
 	"MAP Price (Sale Price)" => "",
