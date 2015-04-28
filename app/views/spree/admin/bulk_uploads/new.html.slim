@@ -4,7 +4,7 @@
 
   div data-hook="admin_product_form_fields"
     .row
-      .col-md-8
+      .col-md-12
         div
           = f.field_container :file, class: ['form-group'] do
             = f.label :file
@@ -14,3 +14,16 @@
         div
           = f.field_container :submit, class: ['form-group'] do
             = f.submit "Submit"
+
+        table.table.table-bordered
+          thead
+            tr
+              th #
+              th File Path
+              th Uploaded At
+          tbody
+            - @bulk_uploads.each do |bulk_upload|
+              tr
+                td= link_to bulk_upload.id, admin_bulk_upload_path(bulk_upload)
+                td= bulk_upload.file.url
+                td= bulk_upload.created_at

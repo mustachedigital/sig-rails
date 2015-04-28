@@ -1,0 +1,13 @@
+- content_for :page_title do 
+  | Upload Products 
+  = @bulk_upload.id
+= form_for [:admin, @bulk_upload] do |f|
+
+  div data-hook="admin_product_form_fields"
+    .row
+      .col-md-12
+        table.table.table-bordered
+          - (1..@file.last_row).to_a.each do |i|
+            tr
+              - @file.sheet("Bulkload").row(i).each do |item|
+                td= item

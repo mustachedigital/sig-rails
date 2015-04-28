@@ -3,8 +3,14 @@ module Spree
     class BulkUploadsController < Spree::Admin::BaseController
 
     	def new
+        @bulk_uploads = BulkUpload.all
     		@bulk_upload = BulkUpload.new
     	end
+
+      def show
+        @bulk_upload = BulkUpload.where(id: params[:id]).first
+        @file = Roo::Spreadsheet.open(@bulk_upload.file.url)
+      end
 
   	  def create
   	    @bulk_upload = BulkUpload.new(bulk_upload_params)
