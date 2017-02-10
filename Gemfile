@@ -6,6 +6,7 @@ gem 'rails', '4.2.0'
 gem 'spree', github: 'spree/spree', branch: '3-0-stable'
 gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => '3-0-stable'
 gem 'spree_auth_devise', :git => 'https://github.com/spree/spree_auth_devise.git', :branch => '3-0-stable'
+gem "spree_analytics_dashboard", github: "w3villa/spree_analytics_dashboard"
 # Use mysql as the database for Active Record
 gem 'mysql2'
 # Use SCSS for stylesheets

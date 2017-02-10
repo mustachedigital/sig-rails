@@ -60,6 +60,15 @@ GIT
       spree_core (= 3.0.0)
 
 GIT
+  remote: git://github.com/w3villa/spree_analytics_dashboard.git
+  revision: a153ef9fdf85463170e3dd62fb28e1aeffd474ff
+  specs:
+    spree_analytics_dashboard (0.0.1)
+      geoip (~> 1.6.1)
+      impressionist (~> 1.5.1)
+      spree_core (>= 3.0.0)
+
+GIT
   remote: https://github.com/spree/spree_auth_devise.git
   revision: 07f16255c8e83cf5763f2c3510444ee1b4cdc4dd
   branch: 3-0-stable
@@ -196,6 +205,7 @@ GEM
       railties (>= 3.2, < 5.0)
     friendly_id (5.1.0)
       activerecord (>= 4.0.0)
+    geoip (1.6.1)
     globalid (0.3.3)
       activesupport (>= 4.1.0)
     highline (1.6.21)
@@ -205,7 +215,11 @@ GEM
     httparty (0.13.3)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
+    httpclient (2.6.0.1)
     i18n (0.7.0)
+    impressionist (1.5.1)
+      httpclient (~> 2.2)
+      nokogiri (~> 1.5)
     jbuilder (2.2.12)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
@@ -416,6 +430,7 @@ DEPENDENCIES
   sidekiq
   slim-rails
   spree!
+  spree_analytics_dashboard!
   spree_auth_devise!
   spree_gateway!
   therubyracer

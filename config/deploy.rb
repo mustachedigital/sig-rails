@@ -24,14 +24,9 @@ set :default_stage, 'production'
 
 
 # Unicorn environment configuration
-set(:unicorn_env) { rails_env }
 
 # Deploy configuration (Unicorn, nginx)
 after 'deploy', 'deploy:cleanup'
-
-after 'deploy:restart', 'unicorn:reload'
-after 'deploy:restart', 'unicorn:restart'
-after 'deploy:restart', 'unicorn:duplicate'
 
 namespace :deploy do
   %w[start stop restart].each do |command|
@@ -80,6 +75,6 @@ namespace :deploy do
     end
   end
 
-  after  "deploy:started", "figaro:setup"
+  after "deploy:started", "figaro:setup"
   after "deploy:symlink:release", "figaro:symlink"
 end

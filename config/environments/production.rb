@@ -3,6 +3,7 @@ SigRails::Application.configure do
 
   # Code is not reloaded between requests.
   config.cache_classes = true
+  config.assets.paths << Rails.root.join('vendor', 'assets')
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both thread web servers
@@ -82,7 +83,7 @@ SigRails::Application.configure do
     ErrorsController.action(:render_error).call(env)
   end
 
-  config.action_mailer.default_url_options = { :host => '54.148.206.64' }
+  config.action_mailer.default_url_options = { :host => '52.24.174.253' }
   config.action_mailer.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
     :enable_starttls_auto => false,
